@@ -1,0 +1,119 @@
+[0m11:52:23.588509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002034473AF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000203479484C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020343F27BE0>]}
+
+
+============================== 11:52:23.594021 | fa6326db-d0a6-428d-bc6a-d1bb108ff52b ==============================
+[0m11:52:23.594021 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:52:23.596016 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\diego\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:52:23.647172 [info ] [MainThread]: dbt version: 1.8.7
+[0m11:52:23.650169 [info ] [MainThread]: python version: 3.8.2
+[0m11:52:23.651680 [info ] [MainThread]: python path: c:\program files\python38\python.exe
+[0m11:52:23.652691 [info ] [MainThread]: os info: Windows-10-10.0.22621-SP0
+[0m11:52:25.534598 [info ] [MainThread]: Using profiles dir at C:\Users\diego\.dbt
+[0m11:52:25.535597 [info ] [MainThread]: Using profiles.yml file at C:\Users\diego\.dbt\profiles.yml
+[0m11:52:25.536597 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\diego\fleet\monzo-take-home-test\dbt_project.yml
+[0m11:52:25.537597 [info ] [MainThread]: adapter type: bigquery
+[0m11:52:25.538598 [info ] [MainThread]: adapter version: 1.8.2
+[0m11:52:25.539600 [info ] [MainThread]: Configuration:
+[0m11:52:25.540599 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m11:52:25.541598 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m11:52:25.541598 [info ] [MainThread]: Required dependencies:
+[0m11:52:25.542971 [debug] [MainThread]: Executing "git --help"
+[0m11:52:25.575063 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m11:52:25.575063 [debug] [MainThread]: STDERR: "b''"
+[0m11:52:25.576066 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m11:52:25.577064 [info ] [MainThread]: Connection:
+[0m11:52:25.578062 [info ] [MainThread]:   method: oauth
+[0m11:52:25.579062 [info ] [MainThread]:   database: 1
+[0m11:52:25.580066 [info ] [MainThread]:   execution_project: 1
+[0m11:52:25.581572 [info ] [MainThread]:   schema: monzo_test
+[0m11:52:25.582579 [info ] [MainThread]:   location: EU
+[0m11:52:25.583579 [info ] [MainThread]:   priority: interactive
+[0m11:52:25.583579 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m11:52:25.584582 [info ] [MainThread]:   impersonate_service_account: None
+[0m11:52:25.585579 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m11:52:25.586578 [info ] [MainThread]:   job_retries: 1
+[0m11:52:25.587581 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m11:52:25.589579 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m11:52:25.589579 [info ] [MainThread]:   timeout_seconds: 300
+[0m11:52:25.590582 [info ] [MainThread]:   client_id: None
+[0m11:52:25.591582 [info ] [MainThread]:   token_uri: None
+[0m11:52:25.592089 [info ] [MainThread]:   dataproc_region: None
+[0m11:52:25.593098 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m11:52:25.594096 [info ] [MainThread]:   gcs_bucket: None
+[0m11:52:25.594096 [info ] [MainThread]:   dataproc_batch: None
+[0m11:52:25.596096 [info ] [MainThread]: Registered adapter: bigquery=1.8.2
+[0m11:52:25.597096 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m11:52:25.597096 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:52:37.790480 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery client: 'Runtime Error
+  Failed to authenticate with supplied credentials
+  error:
+  Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.'
+[0m11:52:37.790480 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m11:52:37.793195 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m11:52:37.794211 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\diego\fleet\monzo-take-home-test\dbt_project.yml> not found
+
+[0m11:52:37.795197 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Runtime Error
+    Failed to authenticate with supplied credentials
+    error:
+    Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m11:52:37.800195 [debug] [MainThread]: Command `dbt debug` failed at 11:52:37.800195 after 14.28 seconds
+[0m11:52:37.800195 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m11:52:37.801705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002034473AF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000203697116D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020369711A60>]}
+[0m11:52:37.801705 [debug] [MainThread]: Flushing usage events
+[0m11:53:06.776841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F446AAAF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F449CB84C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F449EA3DF0>]}
+
+
+============================== 11:53:06.781843 | debe3b12-975a-4542-aecf-2ab9b233db8c ==============================
+[0m11:53:06.781843 [info ] [MainThread]: Running with dbt=1.8.7
+[0m11:53:06.782377 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Users\\diego\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m11:53:06.816087 [info ] [MainThread]: dbt version: 1.8.7
+[0m11:53:06.818085 [info ] [MainThread]: python version: 3.8.2
+[0m11:53:06.819085 [info ] [MainThread]: python path: c:\program files\python38\python.exe
+[0m11:53:06.819085 [info ] [MainThread]: os info: Windows-10-10.0.22621-SP0
+[0m11:53:08.526204 [error] [MainThread]: Encountered an error:
+
+[0m11:53:08.530205 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\cli\main.py", line 406, in debug
+    results = task.run()
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\task\debug.py", line 120, in run
+    load_profile_status: SubtaskStatus = self._load_profile()
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\task\debug.py", line 211, in _load_profile
+    profile: Profile = Profile.render(
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\config\profile.py", line 403, in render
+    return cls.from_raw_profiles(
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\config\profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\config\profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\dbt\config\profile.py", line 152, in _credentials_from_profile
+    credentials = cls.from_dict(data)
+  File "<string>", line 3, in __mashumaro_from_dict__
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\mashumaro\core\meta\code\builder.py", line 586, in add_unpack_method
+    self._add_unpack_method_lines(method_name)
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\mashumaro\core\meta\code\builder.py", line 455, in _add_unpack_method_lines
+    metadata = self.metadatas.get(fname, {})
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\mashumaro\core\meta\code\builder.py", line 260, in metadatas
+    return {
+  File "C:\Users\diego\AppData\Roaming\Python\Python38\site-packages\mashumaro\core\meta\code\builder.py", line 261, in <dictcomp>
+    name: field.metadata
+KeyboardInterrupt
+
+[0m11:53:08.537337 [debug] [MainThread]: Command `dbt debug` failed at 11:53:08.537337 after 1.82 seconds
+[0m11:53:08.537337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F446AAAF40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F46BA6CA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F449E763A0>]}
+[0m11:53:08.538337 [debug] [MainThread]: Flushing usage events

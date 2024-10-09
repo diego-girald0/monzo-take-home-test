@@ -1,0 +1,12 @@
+monzo_take_home_test:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: analytics-take-home-test
+      dataset: take_home_test
+      threads: 1
+      timeout_seconds: 300
+      location: EU
+      priority: interactive
