@@ -33,21 +33,21 @@ WITH date_range AS (
     SELECT
         d.date_key
         , COUNT(DISTINCT u.user_id_hashed) AS active_users_count
-        , COUNT(DISTINCT oa.user_id_hashed) AS open_users_count
+        , COUNT(DISTINCT o.user_id_hashed) AS open_users_count
     FROM date_range d
     LEFT JOIN user_activity u
         ON u.transaction_date BETWEEN DATE_SUB(d.date_key, INTERVAL 6 DAY) AND d.date_key
-    LEFT JOIN open_accounts oa
-        ON oa.event_timestamp <= TIMESTAMP(d.date_key) -- Status date is before or on the date_key
+    LEFT JOIN open_accounts o
+        ON o.event_timestamp <= TIMESTAMP(d.date_key) -- Status date is before or on the date_key
         AND (
-            (oa.event_type = 'created' AND TIMESTAMP(d.date_key) >= oa.event_timestamp) OR  -- Created accounts
-            (oa.event_type = 'reopened' AND TIMESTAMP(d.date_key) >= oa.event_timestamp)   -- Reopened accounts
+            (o.event_type = 'created' AND TIMESTAMP(d.date_key) >= o.event_timestamp) OR  -- Created accounts
+            (o.event_type = 'reopened' AND TIMESTAMP(d.date_key) >= o.event_timestamp)   -- Reopened accounts
         )
 
     WHERE NOT EXISTS ( -- Exclude accounts that have been closed before the date_key
             SELECT 1
             FROM open_accounts e
-            WHERE e.user_id_hashed = oa.user_id_hashed
+            WHERE e.user_id_hashed = o.user_id_hashed
             AND e.event_type = 'closed'
             AND e.event_timestamp < TIMESTAMP(d.date_key)
         )
