@@ -1,10 +1,13 @@
 # Monzo Take-Home Test
+Submitted by: Diego Giraldo
 
 ## Overview
 
-This repository contains the implementation of core data models as part of the Monzo Take-Home Test. The objective of this project is to create two data models, which will be presented in this README file. 
+The objective of this project was to create two data models as part of the Monzo Take Home Test. These will be presented in this README file. 
 
-The BigQuery materialised objects have been created in the schema `DG_take_home_test`, and the tables are prefixed with `DG_`. The objects were created via this dbt project with the [profile](monzo_take_home_test/profiles.yml) and [configurations](monzo_take_home_test/dbt_project.yml) in the respective files.
+The BigQuery materialised objects have been created in the schema `DG_take_home_test`, and the tables are prefixed with `DG_`. 
+
+The objects were created via this dbt project with the [profile](monzo_take_home_test/profiles.yml) and [configurations](monzo_take_home_test/dbt_project.yml) in the respective files.
 
 ---
 
