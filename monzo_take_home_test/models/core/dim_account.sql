@@ -50,7 +50,6 @@ WITH event_aggregates AS (
     , e.closed_ts
     , e.reopened_ts
     , e.latest_update_ts
-
     , TO_JSON_STRING(
         STRUCT(
           CURRENT_TIMESTAMP() AS load_timestamp,

@@ -27,4 +27,4 @@ models:
       +materialized: incremental
 
 vars:
-  project_prefix: 'DG'  # aliasing project models with my initials in the database
+  project_prefix: 'DG'  # aliasing project models with initials
