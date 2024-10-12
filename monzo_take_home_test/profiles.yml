@@ -5,8 +5,8 @@ monzo_take_home_test:
       type: bigquery
       method: oauth
       project: analytics-take-home-test
-      dataset: take_home_test
+      dataset: monzo_datawarehouse
       threads: 1
       timeout_seconds: 300
-      location: EU
+      location: US
       priority: interactive

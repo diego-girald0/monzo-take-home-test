@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: dim_account
+    description: "This model provides a dimensional view of accounts, tracking the status of each account based on event history."
+    columns:
+      - name: account_id_hashed
+        description: "Unique identifier for each account."
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id_hashed
+        description: "Unique identifier for the user associated with the account."
+        tests:
+          - not_null
+
+      - name: account_type
+        description: "The type of account"
+
+      - name: account_status
+        description: "The current status of the account (open, closed, reopened)."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['open', 'closed', 'reopened']
+
+      - name: is_open
+        description: "Flag indicating if the account is currently open (true) or closed (false)."
+        tests:
+          - not_null
+
+      - name: created_ts
+        description: "Timestamp when the account was created."
+        tests:
+          - not_null
+
+      - name: closed_ts
+        description: "Timestamp when the account was closed."
+
+      - name: reopened_ts
+        description: "Timestamp when the account was reopened."
+
+      - name: latest_update_ts
+        description: "Timestamp of the latest update to the account."
+        tests:
+          - not_null
+
+      - name: technical_metadata
+        description: "A JSON field that contains technical metadata about the pipeline."
+
+    tests:
+      - dim_account_closed_date_after_created
+      - dim_account_reopened_requires_closed
+      - dim_account_reopened_after_closed
+      - dim_account_status_conflict

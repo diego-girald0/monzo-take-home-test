@@ -17,9 +17,14 @@ clean-targets:
 
 models:
   monzo_take_home_test:
+    +database: analytics-take-home-test
+    +schema: DG_take_home_test
     sources:
       +materialized: ephemeral
     staging:
       +materialized: incremental
     core:
       +materialized: incremental
+
+vars:
+  project_prefix: 'DG'  # aliasing project models with my initials in the database
