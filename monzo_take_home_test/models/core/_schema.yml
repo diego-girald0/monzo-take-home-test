@@ -54,3 +54,32 @@ models:
       - dim_account_reopened_requires_closed
       - dim_account_reopened_after_closed
       - dim_account_status_conflict
+
+  - name: fact_7d_active_users
+    description: >
+      This model calculates the 7d_active_user metric, made of the following components:
+        - the number of users that had a transaction in the last 7 days
+        - the number of users with at least one open account on the same date.
+    columns:
+      - name: date_key
+        description: "The date for which active users are counted."
+        tests:
+          - not_null
+
+      - name: active_users_count
+        description: "Count of distinct users who had at least one transaction in the last 7 days."
+        tests:
+          - not_null
+
+      - name: open_users_count
+        description: "Count of distinct users with at least one open account on the date_key."
+        tests:
+          - not_null
+
+      - name: 7d_active_users
+        description: "The ratio of active users to open users for the given date."
+        tests:
+          - not_null
+
+      - name: technical_metadata
+        description: "A JSON field that contains technical metadata about the pipeline."

@@ -49,3 +49,23 @@ models:
 
       - name: technical_metadata
         description: "A JSON field that contains technical metadata about the pipeline."
+
+  - name: stg_user_transactions
+    description: "This model provides a daily summary of transactions per user."
+    columns:
+      - name: user_daily_transaction_id
+        description: "Unique identifier for each user-day transaction count."
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id_hashed
+        description: "Unique identifier for each user."
+        tests:
+          - not_null
+
+      - name: transaction_date
+        description: "The date of the transactions."
+
+      - name: total_transactions
+        description: "Total number of transactions for the user on this date."
