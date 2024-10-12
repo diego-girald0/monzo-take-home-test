@@ -2,7 +2,10 @@
 
 ## Overview
 
-This repository contains the implementation of core data models as part of the Monzo Take-Home Test. The objective of this project is to create two data models, which will be presented in this README file. The BigQuery materialised objects have been created on the schema `DG_take_home_test` and the tables prefixed with `DG_`
+This repository contains the implementation of core data models as part of the Monzo Take-Home Test. The objective of this project is to create two data models, which will be presented in this README file. 
+
+The BigQuery materialised objects have been created on the schema `DG_take_home_test` and the tables prefixed with `DG_`.
+The objects were created via this dbt project with the [profile](monzo_take_home_test\profiles.yml) and [configurations](monzo_take_home_test\dbt_project.yml) in the respective files.
 
 ---
 
