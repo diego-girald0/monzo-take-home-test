@@ -9,6 +9,9 @@ models:
         tests:
           - unique
           - not_null
+          - relationships:
+              to: ref('account_created')
+              field: account_id_hashed
 
       - name: user_id_hashed
         description: "Unique identifier for the user associated with the account."
